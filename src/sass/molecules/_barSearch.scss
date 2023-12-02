@@ -1,0 +1,433 @@
+.barSearch {
+    max-width: 60rem;
+    margin: 0 auto;
+    z-index: 999;
+}
+
+@include tablet {
+    .fijo {
+        display: initial !important;
+        transition: all 500ms linear;
+        position: fixed !important;
+        top: 0 !important;
+        max-width: 150rem !important;
+        @include hyperDesktop{
+            max-width: 250rem !important;
+        }
+
+        .advanced__filter {
+            position: relative !important;
+        }
+
+        .floatbar {
+            background-color: $primario;
+            z-index: 100000 !important;
+            width: 100vw;
+        }
+    }
+
+
+    .barSearch {
+        margin: 0 auto 8rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        top: 0;
+        max-width: 120rem;
+        form{
+            height: 0;
+        }
+    }
+}
+
+
+// Filter Small
+
+div.container__filter {
+    min-width: 29.6rem;
+    min-height: 17.6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 10px;
+    background-color: $blanco;
+    margin: 3rem 3.5rem 0rem 3.5rem;
+    padding: 0 0 1.5rem 0;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.80);
+
+    div.container__buttons {
+        display: flex;
+        align-items: center;
+        grid-column: 1/3;
+        padding: 2rem 0rem 0 2rem;
+        border-top: 1px solid #ddd;
+
+        button.button__search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            width: 211px;
+            height: 32px;
+            flex: 70%;
+            font-size: 22px;
+            
+            font-weight: 600;
+            color: $blanco;
+            border: none;
+            border-radius: 1rem;
+            background-color: $primario;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            margin: 0;
+            padding: 1rem;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            span {
+                z-index: 1;
+            }
+
+            &::after {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background-color: $secundario ;
+                position: absolute;
+                transition: all 0.3s ease-in-out;
+                right: 0;
+                border-radius: 0.5rem;
+            }
+
+            &:hover::after {
+                right: auto;
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        button.button__filter {
+            appearance: none;
+            border: none;
+            background-color: $blanco;
+            padding: 0;
+            flex: 30%;
+        }
+
+    }
+
+    @include tablet {
+        min-height: 7.1rem;
+        grid-template-columns: 350px 230px 150px 250px;
+        margin: 3rem 0rem 0rem;
+        padding: 0;
+
+
+        div.container__buttons {
+            grid-column: 4/4;
+            padding: 0;
+            border: none;
+
+            button.button__search {
+                width: 170px;
+                height: 33px;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+
+            button.button__filter {
+                img {
+                    content: url("/img/colraicesInmobiliario/icons/filter_big.svg");
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+div.container__search {
+    ul.list__options {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        min-width: 29.6rem;
+        max-height: 20rem;
+        margin: 1rem 3.5rem;
+        padding: 2rem;
+        border-radius: 10px;
+        background-color: $blanco;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.80);
+        overflow-y: auto;
+
+        li {
+            font-size: 18px;
+            font-weight: 400;
+            color: $grisPlaceholder;
+            padding: 0 0 0 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $blanco;
+                background-color: $primario;
+            }
+        }
+
+        @include tablet {
+            min-width: 35rem;
+            margin: 1rem 0;
+        }
+    }
+
+    ul.list__options:empty {
+        display: none;
+    }
+
+    @include tablet {
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+div.container__list,
+div.container__list-state {
+    min-width: 29.6rem;
+    margin: 1rem 3.5rem;
+    border-radius: 10px;
+    background-color: $blanco;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.80);
+
+    ul.items__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        padding: 2rem 0rem 2rem 3rem;
+
+        li {
+            display: flex;
+            align-items: center;
+            color: $grisPlaceholder;
+            font-size: 18px;
+            font-weight: 400;
+
+            input[type="checkbox"] {
+                appearance: none;
+                position: relative;
+                width: 18px;
+                height: 18px;
+                margin-right: 1rem;
+                background-color: rgba(246, 246, 246, 1);
+                border: 1px solid rgba(246, 246, 246, 1);
+                border-radius: 3px;
+                box-shadow: 0px 0px 4px 0px rgba(19, 19, 19, 0.548);
+                outline: none;
+
+                &:checked {
+                    background-color: $secundario
+                }
+
+                &:checked:after {
+                    content: "\2714";
+                    position: absolute;
+                    font-size: 14px;
+                    font-weight: bold;
+                    left: 2px;
+                    bottom: 0;
+                    color: $blanco;
+                }
+            }
+
+        }
+    }
+
+    @include tablet {
+        position: absolute;
+        left: 32%;
+        min-width: 23rem;
+        z-index: 2;
+    }
+}
+
+@include tablet {
+    .sticky {
+        grid-template-columns: 2fr 1.5fr 1fr 1fr !important;
+        border-radius: unset !important;
+        margin: 0 !important;
+        @include hyperDesktop{
+            padding: 0 13% !important;
+        }
+    }
+
+    .container__list-state {
+        min-width: 15rem !important;
+        left: 56% !important;
+    }
+
+    .sticky__list {
+        width: 27rem !important;
+        max-width: 32rem !important;
+        left: 0 !important;
+        margin: 1rem 40% 0 !important;
+        @include hyperDesktop{
+            left: 2% !important;
+        }
+    }
+
+    .sticky__state {
+        width: 17rem !important;
+        left: 65% !important;
+        margin: 1rem 0 0 0 !important;
+        @include hyperDesktop{
+            left: 62% !important;
+        }
+    }
+
+    .sticky__search {
+        position: absolute;
+        width: 100%;
+        margin: 0 0 0 1.5rem !important;
+
+        ul.list__options {
+            max-width: 35% !important;
+        }
+        @include hyperDesktop{
+            padding-left: 13%;
+            ul.list__options {
+                max-width: 30% !important;
+            }
+        }
+    }
+}
+
+.advanced__filter {
+    position: relative;
+    z-index: 99;
+    display: grid;
+    grid-template-rows: 1fr 6.4rem 6.4rem 1fr;
+    row-gap: 0.8rem;
+    border-radius: 10px;
+    background-color: $blanco;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.80);
+    margin: 1rem 3.5rem;
+    padding: 2rem 2rem 7rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all .2s linear;
+    margin-bottom: -46rem;
+
+    img {
+        display: none;
+    }
+
+    h2 {
+        position: relative;
+        font-size: 16px;
+        color: $grisPlaceholder;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 5rem;
+            top: 2rem;
+            left: 0;
+            border: 1px solid $secundario;
+        }
+    }
+
+    div.container__inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+
+    }
+
+    div.container__checkboxes {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+
+        ul.items__list {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                display: flex;
+                align-items: center;
+                color: $grisPlaceholder;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+    }
+
+    div.bathrooms {
+        justify-content: start;
+    }
+
+    @include tablet {
+        position: absolute;
+        width: 98rem;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1rem;
+        column-gap: 5rem;
+        margin: 1rem auto;
+        padding: 2rem 5rem;
+
+        img {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 22px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #4D4D4D;
+            font-size: 18px;
+            font-weight: 600;
+
+            &::after {
+                border: none;
+            }
+        }
+
+        div.container__inputs {
+            max-width: 40rem;
+            row-gap: 0.75rem;
+
+            div.container__fields {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                input {
+                    box-shadow: none;
+                }
+            }
+
+        }
+
+        div.container__checkboxes {
+            row-gap: 2.5rem;
+
+            ul.items__list {
+                min-height: 4.4rem;
+                max-width: 37.6rem;
+                justify-content: space-around;
+                border-radius: 5px;
+                background-color: #F6F6F6;
+
+            }
+        }
+
+    }
+}
+
+div.advanced__filter.open {
+    transform: scaleY(1);
+    transition: all .3s linear;
+    margin-bottom: 1rem;
+}

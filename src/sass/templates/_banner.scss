@@ -1,0 +1,158 @@
+.banner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+        height: 99vh;
+    }
+
+    max-height: 80rem;
+
+    .video {
+        object-fit: cover;
+        overflow: hidden;
+        min-height: 40vh;
+
+        @include tablet {
+            height: 99vh;
+            width: 100%;
+        }
+
+        max-height: 80rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 27%;
+            z-index: 1;
+        }
+
+        video {
+            width: 100%;
+            object-fit: cover;
+            min-height: 40vh;
+
+        }
+    }
+
+    .banner-content {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+    }
+
+    .banner__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 60rem;
+
+        img {
+            max-width: 70%;
+            height: 100%;
+        }
+
+        .banner__text-title {
+            @include tabletinvert {
+                font-size: 5rem;
+                text-align: center;
+                padding: 1rem 2rem;
+                margin: 3rem 0;
+                margin-bottom: 2rem;
+            }
+
+            @include tablet {
+                font-size: 6rem;
+            }
+
+            text-shadow: 0px 0px 3px $negro;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+            color: $blanco2;
+        }
+
+        .banner__text-paragraf {
+            @include tabletinvert {
+                text-align: center;
+                padding: 1rem 2rem;
+                margin-bottom: 2rem;
+            }
+
+            text-shadow: 0px 0px 2px $negro;
+            max-width: 60rem;
+            text-align: left;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-top: 0.4rem;
+            margin-bottom: 2rem;
+            color: $blanco2;
+        }
+
+        @include desktop {
+            img {
+                max-width: 100%;
+                height: 100%;
+                margin-bottom: 6rem;
+            }
+        }
+    }
+
+}
+
+.bannermin {
+    .banner-content {
+        top: 42px;
+        left: 5%;
+
+        .banner__text {
+            img {
+                height: 44px;
+                width: 160px;
+                max-width: 100%;
+            }
+        }
+
+    }
+
+    @include tablet {
+
+        height: 60vh;
+
+        .banner-content {
+            row-gap: 10rem;
+            top: 90px;
+            left: auto;
+
+            .banner__text {
+                display: unset;
+                @include tablet{
+                    height: 70px;
+                    width: 250px;
+                    margin-left: -73rem;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                @include desktop{
+                    margin-left: -95rem;
+                }
+            }
+        }
+    }
+}

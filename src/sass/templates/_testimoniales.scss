@@ -1,0 +1,46 @@
+.container-testimonial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .testimoniales-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 3rem;
+    }
+
+    @include tablet {
+        max-width: 122rem;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        padding: 15rem 0;
+
+        .title-section {
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 0;
+            padding: 1rem 0 0 9rem;
+
+            .title-section-title {
+                margin-bottom: 3.5rem;
+                text-align: start;
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+
+            .title-section-paragraph {
+                font-size: 24px;
+                text-align: start;
+            }
+        }
+
+        .testimoniales-cards {
+            justify-content: flex-end;
+            row-gap: 1rem;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+header.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(100% - 2rem, 17rem);
+    display: grid;
+    gap: 0.25rem;
+    margin: 4rem 3.5rem 0 0;
+    border-radius: 2rem;
+    background-color: rgba(238, 238, 238, 0.7);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+
+    nav.dropdown {
+        --_gap: 0.5rem;
+        border-radius: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+
+        label.dropdown__active {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-grow: 1;
+            padding: 1.1rem 0.8rem;
+            cursor: pointer;
+
+            #dropdown__selected {
+                font-weight: 600;
+                color: $primario2;
+            }
+
+            .dropdown__icon {
+                transition: all 1s ease-out;
+            }
+
+        }
+
+        input.dropdown__toggle {
+            display: none;
+        }
+
+        ul.dropdown__list {
+            position: absolute;
+            top: calc(100% + var(--_gap));
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            list-style: none;
+            background-color: rgba(238, 238, 238, 0.7);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border-radius: 1rem;
+            z-index: 10;
+            transform: scaleY(0);
+            transition: transform .1s ease-out;
+            transform-origin: top;
+
+            a {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                font-weight: 600;
+                color: $primario2;
+                cursor: pointer;
+            }
+
+            a:hover {
+                color: $blanco;
+            }
+
+            a.active {
+                color: $blanco2;
+                background-color: $primario2;
+            }
+        }
+
+        ul.dropdown__list.open {
+            transform: scale(1);
+        }
+
+
+        .dropdown__toggle:checked+.dropdown__list {
+            display: flex;
+            flex-direction: column;
+            transition: all .2s ease-out;
+        }
+    }
+
+    @include desktop {
+        margin: 10rem 8rem 0 0;
+
+        label.dropdown__active {
+            padding: 1.1rem 0rem;
+        }
+    }
+}
+
+header.custom-position {
+    margin-right: 1rem;
+    @include tablet {
+        top: 65px;
+        right: 85px;
+        margin: 4rem 0 0 0;
+    }
+    @include hyperDesktop{
+        right: auto;
+        left: 70%;
+    }
+}

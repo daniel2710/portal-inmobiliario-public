@@ -1,0 +1,74 @@
+.inmueblee {
+    padding-top: 3rem;
+    background-color: #f7f7f7;
+    padding-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet {
+        padding-top: 9rem;
+    }
+
+    .inmueble__grid {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem;
+        width: 98%;
+        grid-gap: 3rem;
+        flex-wrap: wrap;
+        div.container-price-desktop{
+            display: none;
+        }
+        div.container-price-mobile{
+            display: block;
+        }
+
+        @include tablet {
+            max-width: 130rem;
+            flex-wrap: nowrap;
+            div.container-price-desktop{
+                display: block;
+            }
+            div.container-price-mobile{
+                display: none;
+            }
+        }
+
+        .inmueble__main {
+            width: 100%;
+            max-width: 82rem;
+        }
+    }
+
+    .inmueble__formularios {
+        width: 100%;
+    }
+
+    .itemFormulario__cta {
+        margin: 0.7rem auto;
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+    }
+    button{
+        cursor: pointer;
+    }
+
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $blanco;
+    z-index: 10;
+    display: flex;
+    row-gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

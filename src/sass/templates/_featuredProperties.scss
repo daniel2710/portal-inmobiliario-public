@@ -1,0 +1,118 @@
+section.container__featured {
+    position: unset;
+
+    .swiper-pagination-bullet-active {
+        background-color: $primario;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: $secundario;
+
+        &::after {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+    }
+
+    .swiper__text-featured {
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            content: "";
+        }
+
+        .swiper-button-next {
+            width: 3.5rem;
+            top: unset;
+            bottom: 4.5rem;
+            right: 7rem;
+            background-image: url('/img/colraicesInmobiliario/icons/arrow_right.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        padding: 5rem 2rem 0;
+        column-gap: 2rem;
+        max-width: 140rem;
+        margin: 0 auto;
+
+        .swiper {
+            flex: 1;
+
+            .swiper-button-next {
+                right: 0;
+            }
+
+            .swiper-button-prev {
+                left: 0;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                &::after {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+
+        div.container__items-featured {
+            height: 61rem;
+            flex: 1;
+
+            h1 {
+                color: $primario;
+                font-size: 50px;
+                font-weight: 700;
+                text-align: center;
+                max-width: 150rem;
+                line-height: 4.5rem;
+                margin: 0 0 3rem 0;
+
+                span {
+                    color: $secundario;
+                    font-size: 35px;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    display: flex;
+                    column-gap: 2.5rem;
+                    align-items: center;
+
+                    img {
+                        max-width: 4.4rem;
+                    }
+
+                    p {
+                        color: $grisPlaceholder;
+                        font-size: 20px;
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        padding: 10rem 12rem 0;
+        column-gap: 10rem;
+
+        div.container__items-featured {
+            h1 {
+                text-align: left;
+            }
+        }
+    }
+
+}

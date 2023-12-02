@@ -1,0 +1,66 @@
+.precioinmueble{
+    padding-bottom: 3rem;
+    @include tablet{
+        padding: 2rem 0 0 0;
+    }
+    .precioinmueble__title{
+        font-size: 2rem;
+        span{
+            font-size: 2.6rem;
+        }
+        font-weight: 500;
+        margin-bottom: 2rem;
+        @include tablet{
+            span{
+                font-size: 3rem;
+            }
+        }
+    }
+    .precioinmueble__buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        button{
+            background-color: #fff;
+            border: none;
+            padding: .7rem 1rem;
+            box-shadow: 0 -1px 19px 0 rgba(3, 101, 172, 0.14);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            font-size: 1.47rem;
+        }
+    }
+    .button__simulator {
+        
+        margin: auto;
+        margin-bottom: 3.4rem;
+        width: 100%;
+        display: inline-block;
+        color: $blanco;
+        font-size: 1.5rem;
+        background-color: $primario;
+        font-weight: 100;
+        padding: 0.4rem 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 4px 4px 4px 0px #30303096,
+            -5px -5px 3px 0px #ffffff;
+        transition: box-shadow 500ms;
+        border: 1px solid $secundario;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: -7px -7px 20px 0px #fff9,
+                -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002,
+                4px 4px 5px 0px #0001;
+        }
+        @include tablet{
+            margin-bottom: 2.4rem;
+            font-size: 1.8rem;
+        }
+    }
+    
+    
+}

@@ -1,0 +1,22 @@
+.eligenos {
+    padding-top: 3rem;
+
+    @include tablet {
+        .section__title {
+            box-shadow: -2px -2px 6px 0px rgba(0, 0, 0, 0.15), 4px 4px 6px 0px rgba(0, 0, 0, 0.25);
+            padding: 6rem 0 3rem;
+            .title-section{
+                margin: 0 auto;
+                max-width: 108rem;
+            }
+        }
+
+        div.eligenos__container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 122rem;
+        }
+    }
+}

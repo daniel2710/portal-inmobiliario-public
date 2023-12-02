@@ -1,0 +1,81 @@
+.slider-recientes {
+    max-width: 122rem;
+    margin: 4rem auto;
+    padding: 0;
+
+    .swiper-wrapper {
+        padding: 5rem 0 0 0;
+    }
+
+    .swiper-button-next {
+        right: 5px;
+    }
+
+    .swiper-button-prev {
+        left: 5px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        font-size: 2rem;
+        color: $secundario;
+        font-weight: 800;
+        transition: all .2s ease-in-out;
+
+        &::after {
+            font-size: 2rem;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $primario;
+        color: $blanco;
+    }
+
+    @include tablet {
+        padding: 0 2rem;
+
+        div.container__reciente {
+            position: relative;
+
+            .swiper {
+                position: unset;
+
+                .swiper-button-next,
+                .swiper-button-prev {
+                    top: 31rem;
+
+                    &::after {
+                        font-size: 3.5rem;
+                    }
+                }
+
+                .swiper-button-next {
+                    right: -20px;
+                }
+
+                .swiper-button-prev {
+                    left: -20px;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        margin: 5rem auto 4rem;
+
+        div.container__reciente {
+            position: relative;
+
+            .swiper {
+                .swiper-button-next {
+                    right: -30px;
+                }
+
+                .swiper-button-prev {
+                    left: -30px;
+                }
+            }
+        }
+    }
+}

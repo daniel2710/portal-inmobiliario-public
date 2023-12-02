@@ -1,0 +1,55 @@
+.container-rightBar-component{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 77px;
+}
+
+.container-rightBar{
+    background: rgba(255, 255, 255, 0.80);
+    border-radius: 22px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 38px 0 28px 60px;
+    min-width: 230px;
+    position: relative;
+
+    .closeIcon{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 15px;
+        top: 20px;
+    }
+
+    a.item-rightBar{
+        min-width: 230px;
+        border-radius: 22px 0px 0px 22px;
+        background: #FFF;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding-left: 20px;
+        padding-right: 10px;
+
+        img{
+            width: 23px;
+            height: 23px;
+        }
+
+        p{
+            color: #2A3F77;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+
+    @include tablet{
+        display: none;
+    }
+}

@@ -1,0 +1,63 @@
+// Globales
+@import "base/nomalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/utilidades";
+@import "base/globales";
+
+//componentes
+@import "components/buton";
+@import "components/searchSelect";
+@import "components/titleSection";
+@import "components/cartTextCol";
+@import "components/input";
+@import "components/select";
+@import "components/navbar";
+@import "components/paginationBasic";
+@import "components/titleNavbar";
+@import "components/rightBar";
+
+
+//Molecules
+@import "molecules/barSearch";
+@import "molecules/ItemInmueble";
+@import "molecules/itemRecomend";
+@import "molecules/titleInmueble";
+@import "molecules/desInmuebles";
+@import "molecules/propInmuebles";
+@import "molecules/precioInmueble";
+@import "molecules/itemFormulario";
+@import "molecules/atributInmueble";
+@import "molecules/itemPlano";
+@import "molecules/itemMap";
+@import "molecules/itemFormInm";
+@import "molecules/itenMap";
+@import "molecules/simulador";
+@import "molecules/itemTextFeatured";
+@import "molecules/itemFeatured";
+@import "molecules/itemFavorite";
+@import "molecules/itemEligenos";
+@import "molecules/testimonial";
+@import "molecules/itemFormResultado";
+
+
+//templatas
+@import "templates/banner";
+@import "templates/bannerInmuebles";
+@import "templates/inmRecientes";
+@import "templates/inmRecomend";
+@import "templates/departamentos";
+@import "templates/eligenos";
+@import "templates/mapa";
+@import "templates/testimoniales";
+@import "templates/InmSimilares";
+@import "templates/inmSimilaresReg";
+@import "templates/header";
+@import "templates/featuredProperties";
+@import "templates/footer";
+
+
+//Containers
+@import "containers/inmueble";
+@import "containers/inmRegion";
+@import "containers/favSection";

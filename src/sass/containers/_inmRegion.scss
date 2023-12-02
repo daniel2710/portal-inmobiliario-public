@@ -1,0 +1,72 @@
+.inmRegion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem 0 0.8rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding-bottom: 7rem;
+
+    .inmRegion__grid {
+        display: grid;
+        max-width: 130rem;
+        margin: 0 auto;
+        gap: 2rem;
+
+        @include tablet {
+            grid-template-columns: auto;
+            width: clamp(100rem, 100%, 122rem);
+
+            .title-section {
+                margin: 4rem 8rem;
+
+                .title-section-title {
+                    font-size: 32px;
+                    max-width: 80%;
+
+                    &::after,
+                    &::before {
+                        top: 1.8rem;
+                        min-width: 12%;
+                    }
+                }
+            }
+
+        }
+
+        .inmRegion__grid__inm {
+            display: flex;
+            justify-content: center;
+            row-gap: 1rem;
+            flex-wrap: wrap;
+
+            @include telefono {
+                justify-content: space-between;
+            }
+
+            @include tablet {
+                column-gap: 1rem;
+                justify-content: center;
+                padding-bottom: 3rem;
+                box-shadow: 0px 120px 100px -130px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+
+
+    @include tablet {
+        row-gap: 12rem;
+    }
+}
+
+// widget form
+img.btn-float-form {
+    height: 70px;
+    width: 155px;
+    position: fixed;
+    right: -2px;
+    bottom: 95px;
+    z-index: 9999;
+    cursor: pointer;
+}
